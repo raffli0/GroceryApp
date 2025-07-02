@@ -1,1 +1,20 @@
-/build
+# === Android specific ===
+*.iml
+.gradle/
+local.properties
+/.idea/
+/build/
+/captures/
+
+# === Firebase / API keys ===
+google-services.json
+app/google-services.json
+*.keystore
+firebase.json
+
+# === Misc ===
+*.log
+*.bak
+*.tmp
+.DS_Store
+.env
