@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
-  
+    <!-- Background saat item DIPILIH -->
+    <item android:state_checked="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@android:color/transparent" /> <!-- warna bg pas selected -->
+            <corners android:radius="12dp" /> <!-- biar rounded -->
+        </shape>
+    </item>
+
+    <!-- Background saat item TIDAK DIPILIH -->
+    <item android:state_checked="false">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/white" /> <!-- transparan -->
+        </shape>
+    </item>
 </selector>

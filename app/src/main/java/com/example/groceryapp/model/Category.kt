@@ -1,4 +1,6 @@
 package com.example.groceryapp.model
 
-class Category {
-}
+class Category (
+    val name: String,
+    val iconResId: Int
+)

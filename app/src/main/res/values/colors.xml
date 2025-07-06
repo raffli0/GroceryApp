@@ -2,4 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="primary">#8BC34A</color> <!-- Green -->
+    <color name="accent">#FF9800</color> <!-- Orange -->
+    <color name="background">#FAF8F1</color> <!-- Creamy -->
+    <color name="textPrimary">#2C2C2C</color>
+    <color name="textSecondary">#7D7D7D</color>
+    <color name="textDark">#2C2C2C</color> <!-- Nama Produk -->
+    <color name="textGray">#5F5F5F</color> <!-- Deskripsi -->
 </resources>
