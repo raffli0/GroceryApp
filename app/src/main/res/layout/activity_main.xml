@@ -5,93 +5,11 @@
     android:layout_height="match_parent"
     android:background="#FAF8F1">
 
-    <androidx.core.widget.NestedScrollView
+    <!--  Container Fragment  -->
+    <FrameLayout
+        android:id="@+id/fragment_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:fillViewport="true"
-        android:clipToPadding="false"
-        android:layout_marginBottom="60dp">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Top Bar (Full Width No Padding) -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="60dp"
-                android:background="@drawable/top_nav_bg"
-                android:orientation="horizontal"
-                android:gravity="center_vertical"
-                android:elevation="8dp"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:paddingTop="0dp"
-                android:paddingBottom="0dp">
-
-                <!-- App Name or Logo -->
-                <TextView
-                    android:id="@+id/topBarTitle"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Grocery App"
-                    android:textColor="#FFFFFF"
-                    android:textSize="20sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
-
-    <!-- Main Content (With Padding) -->
-        <!-- Categories Section -->
-        <TextView
-            android:id="@+id/categoryText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Category"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:layout_marginTop="16dp"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/categoryLists"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:orientation="horizontal"
-            tools:listitem="@layout/item_category"
-            android:overScrollMode="never"
-            android:paddingStart="8dp"
-            android:paddingEnd="8dp"
-            android:scrollbars="none"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
-
-        <TextView
-            android:id="@+id/productText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Products"
-            android:textColor="@color/black"
-            android:textSize="18sp"
-            android:textStyle="bold"
-            android:paddingStart="16dp"
-            android:paddingEnd="16dp"
-            android:layout_marginTop="16dp"/>
-
-        <!-- RecyclerView for Items -->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerView"
-            android:layout_marginTop="12dp"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1" />
-
-        </LinearLayout>
-    </androidx.core.widget.NestedScrollView>
+        android:layout_height="match_parent"/>
 
     <!-- Floating Bottom Navigation -->
     <com.google.android.material.bottomnavigation.BottomNavigationView

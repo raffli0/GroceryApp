@@ -1,19 +1,17 @@
 package com.example.groceryapp.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.groceryapp.R
 import com.example.groceryapp.model.Product
 import com.example.groceryapp.utils.formatPrice
-import com.example.groceryapp.view.DetailActivity
-import java.text.NumberFormat
-import java.util.Locale
+import com.example.groceryapp.view.DetailFragment
 
 class ProductAdapter(private val items: List<Product>) :
     RecyclerView.Adapter<ProductAdapter.ProductViewHolder>() {
@@ -30,21 +28,17 @@ class ProductAdapter(private val items: List<Product>) :
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        val p = items[position]
-        holder.name.text = p.name
-        holder.price.text = "Rp ${formatPrice(p.price)}"
-        Glide.with(holder.itemView.context).load(p.image).into(holder.img)
+        val product = items[position]
+        holder.name.text = product.name
+        holder.price.text = "Rp ${formatPrice(product.price)}"
+        Glide.with(holder.itemView.context).load(product.image).into(holder.img)
 
         holder.itemView.setOnClickListener {
-            val context = holder.itemView.context
-            val intent = Intent(context, DetailActivity::class.java).apply {
-                putExtra("PRODUCT_ID", p.id)
-                putExtra("PRODUCT_NAME", p.name)
-                putExtra("PRODUCT_PRICE", p.price)
-                putExtra("PRODUCT_IMAGE", p.image)
-                putExtra("PRODUCT_DESC", p.desc)
-            }
-            context.startActivity(intent)
+            val fragment = DetailFragment.newInstance(product)
+            (holder.itemView.context as AppCompatActivity).supportFragmentManager.beginTransaction()
+                .replace(R.id.fragment_container, fragment)
+                .addToBackStack(null)
+                .commit()
         }
     }
 
