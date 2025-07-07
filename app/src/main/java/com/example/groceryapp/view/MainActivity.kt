@@ -1,13 +1,14 @@
 package com.example.groceryapp.view
 
 import android.os.Bundle
-import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.example.groceryapp.R
+import com.example.groceryapp.view.main.HomeFragment
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.example.groceryapp.utils.BottomNavVisibilityListener
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), BottomNavVisibilityListener {
     private lateinit var bottomNav: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -46,19 +47,25 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun hideBottomNav() {
-        Log.d("MainActivity", "hideBottomNav called")
-        bottomNav.animate().translationY(bottomNav.height.toFloat()).setDuration(200).start()
-    }
-
-    fun showBottomNav() {
-        Log.d("MainActivity", "showBottomNav called")
-        bottomNav.animate().translationY(0f).setDuration(200).start()
-    }
-
     private fun loadFragment(fragment: Fragment) {
         supportFragmentManager.beginTransaction()
             .replace(R.id.fragment_container, fragment)
             .commit()
+    }
+
+    override fun hideBottomNav() {
+        bottomNav.animate().cancel()
+        bottomNav.animate()
+            .translationY(bottomNav.height.toFloat())
+            .setDuration(150)
+            .start()
+    }
+
+    override fun showBottomNav() {
+        bottomNav.animate().cancel()
+        bottomNav.animate()
+            .translationY(0f)
+            .setDuration(150)
+            .start()
     }
 }

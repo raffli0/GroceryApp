@@ -1,4 +1,4 @@
-package com.example.groceryapp.model
+package com.example.groceryapp.data.model
 
 import java.io.Serializable
 

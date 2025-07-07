@@ -1,4 +1,4 @@
-package com.example.groceryapp.model
+package com.example.groceryapp.data.model
 
 class User {
 

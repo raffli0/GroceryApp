@@ -1,7 +1,7 @@
 package com.example.groceryapp.presenter
 
 import com.example.groceryapp.contract.ProductContract
-import com.example.groceryapp.model.Product
+import com.example.groceryapp.data.model.Product
 import com.google.firebase.firestore.FirebaseFirestore
 
 class ProductPresenter(private val view: ProductContract.View) : ProductContract.Presenter {
@@ -18,7 +18,8 @@ class ProductPresenter(private val view: ProductContract.View) : ProductContract
                 }
                 if (snapshot != null && !snapshot.isEmpty) {
                     val list = snapshot.documents.mapNotNull { it.toObject(Product::class.java) }
-                    view.onProductLoaded(list)
+                    view.
+                    onProductLoaded(list)
                 }
             }
     }

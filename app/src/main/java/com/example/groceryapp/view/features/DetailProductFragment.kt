@@ -6,19 +6,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.bumptech.glide.Glide
-import com.example.groceryapp.databinding.ProductDetailFragment
 import com.example.groceryapp.data.model.Product
+import com.example.groceryapp.databinding.FragmentDetailProductBinding
 
-class ProductDetailFragment : Fragment() {
+class DetailProductFragment : Fragment() {
 
-    private var _binding: ProductDetailFragment? = null
+    //binding file xml
+    private var _binding: FragmentDetailProductBinding? = null
     private val binding get() = _binding!!
 
     companion object {
         private const val ARG_PRODUCT = "arg_product"
 
-        fun newInstance(product: Product): ProductDetailFragment {
-            val fragment = ProductDetailFragment()
+        fun newInstance(product: Product): DetailProductFragment {
+            val fragment = DetailProductFragment()
             val bundle = Bundle()
             bundle.putSerializable(ARG_PRODUCT, product)
             fragment.arguments = bundle
@@ -30,7 +31,7 @@ class ProductDetailFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = ProductDetailFragment.inflate(inflater, container, false)
+        _binding = FragmentDetailProductBinding.inflate(inflater, container, false)
         return binding.root
     }
 

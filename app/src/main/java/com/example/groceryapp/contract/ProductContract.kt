@@ -1,5 +1,5 @@
 package com.example.groceryapp.contract
-import com.example.groceryapp.model.Product
+import com.example.groceryapp.data.model.Product
 
 interface ProductContract {
     interface View {
