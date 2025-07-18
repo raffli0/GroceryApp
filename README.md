@@ -16,5 +16,7 @@ Grocery app
 ## Tech Stack
 
 - Kotlin
-- Firebase 
+- Firestore for metadata
+- Firebase for auth
+- Supabase for storage
 
